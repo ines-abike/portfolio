@@ -1,42 +1,47 @@
 
 import React from "react";
-import Image from "next/image";
 import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsEye } from "react-icons/bs";
-import { RiGitRepositoryCommitsFill } from "react-icons/ri";
-import { FiFigma } from "react-icons/fi";
+import ProjectCard from "@/components/ProjectCard";
 const projects = [
   {
-    title: "Landing page",
+    id:1,
+    title: "VaultFlow",
     preview: "/saas-futurist.png",
     desc: "Landing page d'une saas au style futurist et aux animations fluides et modernes",
     demo: "ftc-w1-ines.vercel.app",
     github: "github.com/InesAbike/FTC-W1-Ines",
-    figma: "https://www.figma.com/design/3xwYqxhJkfVyqwJ82iYJeZ/Challenge-FtoC?node-id=0-1&p=f&t=gp1YFyO9ofCZRsdr-0"
+    figma: "https://www.figma.com/design/3xwYqxhJkfVyqwJ82iYJeZ/Challenge-FtoC?node-id=0-1&p=f&t=gp1YFyO9ofCZRsdr-0",
+    type: "web"
   },
   {
-    title: "AI Chat Application",
-    preview: "/preview-new.webp",
-    desc: "Real-time chat application powered by OpenAI",
-    demo: "https://github.com/InesAbike/MVP-CodeTeam",
-    github: "https://github.com/InesAbike/MVP-CodeTeam",
-    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+    id:2,
+    title: "Spend In",
+    preview: "/spend-in-website.png",
+    desc: "Landing page d'un site web de gestion des dépenses",
+    demo: "https://ftc-w2-ines.vercel.app/",
+    github: "https://github.com/InesAbike/FTC-W2-Ines",
+    figma: "https://www.figma.com/design/HSh6lWKt03DkMpZX5HRpg2/Good-inspiration-Week-2?node-id=2-5&p=f&t=R793Egrh2dOVD64j-0",
+    type: "web"
   },
   {
-    title: "Task Management",
-    preview: "/preview-new.webp",
-    desc: "Collaborative task management tool with real-time updates",
-    demo: "https://github.com/InesAbike/MVP-CodeTeam",
-    github: "https://github.com/InesAbike/MVP-CodeTeam",
-    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+    id:3,
+    title: "Ballamas e-commerce",
+    preview: "/ballamas.png",
+    desc: "Site e-commerce de vente de vêtements et d'accessoires",
+    demo: "https://figma-to-code-ed2-week2-swart.vercel.app/",
+    github: "https://github.com/InesAbike/figma-to-code-ed2-week2",
+    figma: "#",
+    type: "web"
   },
   {
-    title: "Portfolio Generator",
-    preview: "/preview-new.webp",
-    desc: "Dynamic portfolio generator for developers",
-    demo: "https://github.com/InesAbike/MVP-CodeTeam",
-    github: "https://github.com/InesAbike/MVP-CodeTeam",
-    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+    id:4,
+    title: "App mobile Pokedex",
+    preview: "/pokedex-preview.png",
+    desc: "App mobile de recherche de pokemons",
+    demo: "https://www.webmobilefirst.com/screencasts/s2-6xqmr-516zf/",
+    github: "https://github.com/InesAbike/Pokedex",
+    figma: "https://www.figma.com/design/r6GxDzD0J5U8wZU1416GrX/Pok%C3%A9dex--Community-?node-id=1024-1850&t=zkYpR3BE248PQder-0",
+    type: "mobile"
   },
 ];
 
@@ -51,32 +56,6 @@ const skills = [
   "GitHub",
 ];
 
-function ProjectCard({ title, desc, demo, github, figma, preview }: { title: string; desc: string; demo: string; github: string, figma: string, preview: string }) {
-  return (
-    <div className="group relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
-      <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]/">
-        <Image
-          src={preview}
-          alt={title}
-          width={500}
-          height={500}
-          className="w-full md:h-80 h-64 object-cover group-hover:scale-105 transition-all duration-300" />
-        <div className="bg-black/50 h-full w-full inset-0 absolute flex items-end justify-start">
-          <div className="p-4 pb-6">
-            <h3 className="font-semibold text-neutral-100">{title}</h3>
-            <p className="text-neutral-300 mt-2">{desc}</p>
-
-            <div className="mt-4 flex gap-3">
-              <a href={demo} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><BsEye /></a>
-              <a href={github} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><RiGitRepositoryCommitsFill /></a>
-              <a href={figma} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><FiFigma /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function Home() {
   return (
@@ -110,7 +89,16 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-6">
           {projects.map((p) => (
-            <ProjectCard key={p.title} title={p.title} desc={p.desc} demo={p.demo} github={p.github} figma={p.figma} preview={p.preview} />
+            <ProjectCard
+              key={p.title}
+              title={p.title}
+              desc={p.desc}
+              demo={p.demo}
+              github={p.github}
+              figma={p.figma}
+              preview={p.preview}
+              type={p.type}
+            />
           ))}
         </div>
 
@@ -135,13 +123,13 @@ export default function Home() {
 
         <div className="mt-6 flex items-center justify-center gap-4 text-neutral-300">
           {/* social icons placeholders - visible but textual content kept minimal as in interface */}
-          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          <a href="https://www.linkedin.com/in/in%C3%A8s-agbozo-4510472b1/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaLinkedin />
           </a>
-          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          <a href="https://github.com/InesAbike/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaGithub />
           </a>
-          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          <a href="https://www.facebook.com/ines.agbozo.9" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaFacebookF />
           </a>
         </div>
