@@ -1,102 +1,148 @@
+import Link from "next/link";
+import React from "react";
 import Image from "next/image";
+import { Facebook, Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    preview: "/preview-new.webp",
+    desc: "A modern e-commerce platform built with Next.js and Stripe",
+    demo: "https://github.com/InesAbike/MVP-CodeTeam",
+    github: "https://github.com/InesAbike/MVP-CodeTeam",
+    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+  },
+  {
+    title: "AI Chat Application",
+    preview: "/preview-new.webp",
+    desc: "Real-time chat application powered by OpenAI",
+    demo: "https://github.com/InesAbike/MVP-CodeTeam",
+    github: "https://github.com/InesAbike/MVP-CodeTeam",
+    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+  },
+  {
+    title: "Task Management",
+    preview: "/preview-new.webp",
+    desc: "Collaborative task management tool with real-time updates",
+    demo: "https://github.com/InesAbike/MVP-CodeTeam",
+    github: "https://github.com/InesAbike/MVP-CodeTeam",
+    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+  },
+  {
+    title: "Portfolio Generator",
+    preview: "/preview-new.webp",
+    desc: "Dynamic portfolio generator for developers",
+    demo: "https://github.com/InesAbike/MVP-CodeTeam",
+    github: "https://github.com/InesAbike/MVP-CodeTeam",
+    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+  },
+];
+
+const skills = [
+  "React",
+  "Next.js",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "TailwindCSS",
+  "React Native",
+  "GitHub",
+];
+
+function ProjectCard({ title, desc, demo, github, figma, preview }: { title: string; desc: string; demo: string; github: string, figma: string, preview: string }) {
+  return (
+    <div className="group h-80 relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
+      <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]/">
+        <Image
+          src={preview}
+          alt={title}
+          width={500}
+          height={500}
+          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
+        <div className="bg-black/50 h-full w-full inset-0 absolute flex items-center">
+          <div className="p-4 pb-6">
+            <h3 className="font-semibold text-neutral-100">{title}</h3>
+            <p className="text-neutral-300 mt-2">{desc}</p>
+
+            <div className="mt-4 flex gap-3">
+              <Link href={demo} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">View Project</Link>
+              <Link href={github} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">GitHub</Link>
+              <Link href={figma} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">Figma</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#07060a] to-[#0b0710] text-white font-sans max-w-8xl">
+      <header className="relative flex flex-col items-center justify-center min-h-screen bg-black text-center">
+        <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+          Inès Agbozo
+        </h1>
+        <p className="mt-4 text-lg text-gray-300">
+          Front-End Developer
+        </p>
+        <div className="absolute mx-auto bottom-10 animate-bounce">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </svg>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+      <section className="max-w-7xl mx-auto py-16">
+        <h2 className="text-white text-4xl font-semibold mb-12 text-center">Réalisations</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-6">
+          {projects.map((p) => (
+            <ProjectCard key={p.title} title={p.title} desc={p.desc} demo={p.demo} github={p.github} figma={p.figma} preview={p.preview} />
+          ))}
+        </div>
+
+        <h2 className=" text-center text-white text-4xl font-semibold">Outils & Technologies</h2>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto p-16 bg-gradient-to-b from-[#0b0b0f] via-[#0b0810] to-[#28153f]">
+          {skills.map((s) => (
+            <div key={s} className="text-center py-8 rounded-md bg-transparent hover:bg-slate-50/10 transition-all duration-300 border border-neutral-800 text-neutral-200">
+              {s}
+            </div>
+          ))}
+        </div>
+      </section>
+      <footer className="mt-8 pb-16 text-center">
+        <h2 className="text-white text-4xl font-semibold">Contactez moi</h2>
+        <p className="text-neutral-300 mt-3">Avez-vous un projet en tête? Laissez-nous créer quelque chose de magnifique ensemble.</p>
+
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm">Contactez-moi</button>
+          <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm">Télécharger le CV</button>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center gap-4 text-neutral-300">
+          {/* social icons placeholders - visible but textual content kept minimal as in interface */}
+          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+            <Linkedin />
+          </Link>
+          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+            <Github />
+          </Link>
+          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+            <Facebook />
+          </Link>
+        </div>
       </footer>
     </div>
   );
