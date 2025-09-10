@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { FaFacebookF } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
+import { BsEye } from "react-icons/bs";
+import { RiGitRepositoryCommitsFill } from "react-icons/ri";
+import { FiFigma } from "react-icons/fi";
 const projects = [
   {
     title: "E-Commerce Platform",
@@ -52,7 +53,7 @@ const skills = [
 
 function ProjectCard({ title, desc, demo, github, figma, preview }: { title: string; desc: string; demo: string; github: string, figma: string, preview: string }) {
   return (
-    <div className="group h-80 relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
+    <div className="group relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
       <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]/">
         <Image
           src={preview}
@@ -60,15 +61,15 @@ function ProjectCard({ title, desc, demo, github, figma, preview }: { title: str
           width={500}
           height={500}
           className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
-        <div className="bg-black/50 h-full w-full inset-0 absolute flex items-center">
+        <div className="bg-black/50 h-full w-full inset-0 absolute flex items-end justify-start">
           <div className="p-4 pb-6">
             <h3 className="font-semibold text-neutral-100">{title}</h3>
             <p className="text-neutral-300 mt-2">{desc}</p>
 
             <div className="mt-4 flex gap-3">
-              <Link href={demo} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">View Project</Link>
-              <Link href={github} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">GitHub</Link>
-              <Link href={figma} className="px-3 py-1 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200">Figma</Link>
+              <Link href={demo} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><BsEye /></Link>
+              <Link href={github} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><RiGitRepositoryCommitsFill /></Link>
+              <Link href={figma} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><FiFigma /></Link>
             </div>
           </div>
         </div>
@@ -115,7 +116,7 @@ export default function Home() {
 
         <h2 className=" text-center text-white text-4xl font-semibold">Outils & Technologies</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto p-16 bg-gradient-to-b from-[#0b0b0f] via-[#0b0810] to-[#28153f]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto lg:p-16 md:p-10 p-6 bg-gradient-to-b from-[#0b0b0f] via-[#0b0810] to-[#28153f]">
           {skills.map((s) => (
             <div key={s} className="text-center py-8 rounded-md bg-transparent hover:bg-slate-50/10 transition-all duration-300 border border-neutral-800 text-neutral-200">
               {s}
@@ -123,7 +124,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <footer className="mt-8 pb-16 text-center">
+      <footer className="mt-8 pb-16 text-center p-6">
         <h2 className="text-white text-4xl font-semibold">Contactez moi</h2>
         <p className="text-neutral-300 mt-3">Avez-vous un projet en tête? Laissez-nous créer quelque chose de magnifique ensemble.</p>
 
