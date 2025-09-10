@@ -17,15 +17,15 @@ export default function ProjectCard({
   return (
     <>
       <div className="group relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
-        <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]/">
+        <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]">
           <Image
             src={preview}
             alt={title}
             width={500}
             height={500}
-            className="w-full md:h-80 h-64 object-cover group-hover:scale-105 transition-all duration-300"
+            className="w-full h-96 object-cover group-hover:scale-105 transition-all duration-300"
           />
-          <div className="bg-black/50 h-full w-full inset-0 absolute flex items-end justify-start">
+          <div className="bg-black/80 h-full w-full inset-0 absolute flex items-end justify-start">
             <div className="p-4 pb-6">
               <h3 className="font-semibold text-neutral-100">{title}</h3>
               <p className="text-neutral-300 mt-2">{desc}</p>
