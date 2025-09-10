@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import React from "react";
 import Image from "next/image";
 import { FaFacebookF, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { FiFigma } from "react-icons/fi";
 const projects = [
   {
     title: "E-Commerce Platform",
-    preview: "/preview-new.webp",
+    preview: "/saas-futurist.png",
     desc: "A modern e-commerce platform built with Next.js and Stripe",
     demo: "ftc-w1-ines.vercel.app",
     github: "github.com/InesAbike/FTC-W1-Ines",
@@ -67,9 +67,9 @@ function ProjectCard({ title, desc, demo, github, figma, preview }: { title: str
             <p className="text-neutral-300 mt-2">{desc}</p>
 
             <div className="mt-4 flex gap-3">
-              <Link href={demo} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><BsEye /></Link>
-              <Link href={github} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><RiGitRepositoryCommitsFill /></Link>
-              <Link href={figma} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><FiFigma /></Link>
+              <a href={demo} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><BsEye /></a>
+              <a href={github} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><RiGitRepositoryCommitsFill /></a>
+              <a href={figma} className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"><FiFigma /></a>
             </div>
           </div>
         </div>
@@ -135,15 +135,15 @@ export default function Home() {
 
         <div className="mt-6 flex items-center justify-center gap-4 text-neutral-300">
           {/* social icons placeholders - visible but textual content kept minimal as in interface */}
-          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaLinkedin />
-          </Link>
-          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          </a>
+          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaGithub />
-          </Link>
-          <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
+          </a>
+          <a href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
             <FaFacebookF />
-          </Link>
+          </a>
         </div>
       </footer>
     </div>
