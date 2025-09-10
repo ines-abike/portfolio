@@ -60,7 +60,7 @@ function ProjectCard({ title, desc, demo, github, figma, preview }: { title: str
           alt={title}
           width={500}
           height={500}
-          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300" />
+          className="w-full md:h-80 h-64 object-cover group-hover:scale-105 transition-all duration-300" />
         <div className="bg-black/50 h-full w-full inset-0 absolute flex items-end justify-start">
           <div className="p-4 pb-6">
             <h3 className="font-semibold text-neutral-100">{title}</h3>
