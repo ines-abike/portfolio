@@ -16,7 +16,7 @@ const projects = [
     preview: "/saas-futurist.png",
     desc: "Vaultflow est une landing page fictive créée dans le cadre d'un challenge. Elle présente un design moderne et épuré, mettant en avant une plateforme d'analyse de données avec un tableau de bord et des fonctionnalités interactives, dans le but de démontrer des compétences en UI/UX et développement front-end.",
     demo: "https://ftc-w1-ines.vercel.app",
-    github: "github.com/InesAbike/FTC-W1-Ines",
+    github: "https://github.com/InesAbike/FTC-W1-Ines",
     figma: "https://www.figma.com/design/3xwYqxhJkfVyqwJ82iYJeZ/Challenge-FtoC?node-id=0-1&p=f&t=gp1YFyO9ofCZRsdr-0",
     type: "web"
   },
