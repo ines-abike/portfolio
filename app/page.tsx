@@ -82,7 +82,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#07060a] to-[#0b0710] text-white font-sans max-w-8xl">
       <header className="relative flex flex-col items-center justify-center min-h-screen bg-black text-center">
-        <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        <h1 className="md:text-6xl text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
           Inès Agbozo
         </h1>
         <p className="mt-4 text-lg text-gray-300">
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </header>
       <section className="max-w-7xl mx-auto py-16">
-        <h2 className="text-white text-4xl font-semibold mb-12 text-center">Réalisations</h2>
+        <h2 className="text-white md:text-4xl text-2xl font-semibold mb-12 text-center">Réalisations</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 px-6">
           {projects.map((p) => (
@@ -114,7 +114,7 @@ export default function Home() {
           ))}
         </div>
 
-        <h2 className=" text-center text-white text-4xl font-semibold">Outils & Technologies</h2>
+        <h2 className=" text-center text-white md:text-4xl text-2xl font-semibold">Outils & Technologies</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto lg:p-16 md:p-10 p-6 bg-gradient-to-b from-[#0b0b0f] via-[#0b0810] to-[#28153f]">
           {skills.map((s) => (
