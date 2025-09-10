@@ -7,9 +7,9 @@ import { RiGitRepositoryCommitsFill } from "react-icons/ri";
 import { FiFigma } from "react-icons/fi";
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Landing page",
     preview: "/saas-futurist.png",
-    desc: "A modern e-commerce platform built with Next.js and Stripe",
+    desc: "Landing page d'une saas au style futurist et aux animations fluides et modernes",
     demo: "ftc-w1-ines.vercel.app",
     github: "github.com/InesAbike/FTC-W1-Ines",
     figma: "https://www.figma.com/design/3xwYqxhJkfVyqwJ82iYJeZ/Challenge-FtoC?node-id=0-1&p=f&t=gp1YFyO9ofCZRsdr-0"
