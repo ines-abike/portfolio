@@ -37,7 +37,7 @@ const projects = [
     id:4,
     title: "App mobile Pokedex",
     preview: "/pokedex-preview.png",
-    desc: "App mobile de recherche de pokemons",
+    desc: "Cette application mobile permet de rechercher et découvrir tous les Pokémon facilement. Elle affiche chaque Pokémon avec son image, son nom et son numéro dans le Pokédex, et propose des outils pratiques pour filtrer les Pokémon par ID ou numéro ainsi que pour les rechercher rapidement par nom.",
     demo: "https://www.webmobilefirst.com/screencasts/s2-6xqmr-516zf/",
     github: "https://github.com/InesAbike/Pokedex",
     figma: "https://www.figma.com/design/r6GxDzD0J5U8wZU1416GrX/Pok%C3%A9dex--Community-?node-id=1024-1850&t=zkYpR3BE248PQder-0",
