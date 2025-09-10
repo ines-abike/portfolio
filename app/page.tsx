@@ -1,16 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { Facebook, Linkedin } from "lucide-react";
-import { Github } from "lucide-react";
+import { FaFacebookF } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 const projects = [
   {
     title: "E-Commerce Platform",
     preview: "/preview-new.webp",
     desc: "A modern e-commerce platform built with Next.js and Stripe",
-    demo: "https://github.com/InesAbike/MVP-CodeTeam",
-    github: "https://github.com/InesAbike/MVP-CodeTeam",
-    figma: "https://github.com/InesAbike/MVP-CodeTeam"
+    demo: "ftc-w1-ines.vercel.app",
+    github: "github.com/InesAbike/FTC-W1-Ines",
+    figma: "https://www.figma.com/design/3xwYqxhJkfVyqwJ82iYJeZ/Challenge-FtoC?node-id=0-1&p=f&t=gp1YFyO9ofCZRsdr-0"
   },
   {
     title: "AI Chat Application",
@@ -134,13 +135,13 @@ export default function Home() {
         <div className="mt-6 flex items-center justify-center gap-4 text-neutral-300">
           {/* social icons placeholders - visible but textual content kept minimal as in interface */}
           <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
-            <Linkedin />
+            <FaLinkedin />
           </Link>
           <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
-            <Github />
+            <FaGithub />
           </Link>
           <Link href="https://www.facebook.com/ines.agbozo" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center">
-            <Facebook />
+            <FaFacebookF />
           </Link>
         </div>
       </footer>
