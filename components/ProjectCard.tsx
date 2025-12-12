@@ -27,8 +27,8 @@ export default function ProjectCard({
           />
           <div className="bg-black/80 h-full w-full inset-0 absolute flex items-end justify-start">
             <div className="p-4 pb-6">
-              <h3 className="font-semibold text-neutral-100">{title}</h3>
-              <p className="text-neutral-300 mt-2">{desc}</p>
+              <h3 className="font-semibold text-start text-neutral-100">{title}</h3>
+              <p className="text-neutral-300 text-start mt-2">{desc}</p>
 
               <div className="mt-4 flex gap-3">
                   <a
