@@ -131,10 +131,10 @@ export default function HomePage() {
                     <p ref={subtitleRef} className="max-w-xl mx-auto text-sm md:text-base text-neutral-400">
                         I develop web projects with the goal of making them both beautiful and useful...
                     </p>
-                       <div className="mt-6 flex items-center justify-center gap-3">
-                    <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Contact me</button>
-                    <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Download CV</button>
-                </div>
+                    <div className="mt-6 flex items-center justify-center gap-3">
+                        <button className="px-4 py-2 rounded-full bg-[#0e1428] border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Download CV</button>
+                        <button className="px-4 py-2 rounded-full bg-orange-600 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Contact me</button>
+                    </div>
                 </div>
             </header>
 
@@ -161,7 +161,7 @@ export default function HomePage() {
                         </p>
 
                         <p>
-                            When I&apos;m not coding, I&apos;m font off make photography and play chess. 
+                            When I&apos;m not coding, I&apos;m font off make photography and play chess.
                         </p>
                     </div>
 
@@ -242,17 +242,17 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <section className="md:py-16 py-6">
-                <div className="flex items-center gap-4 md:px-16 sm:px-10 px-4">
+            <section className="md:py-16 py-6 bg-gradient-to-b from-[#03071e] via-[#03071e] to-orange-600/20">
+                <div className="flex max-w-7xl mx-auto items-center gap-4 md:px-16 sm:px-10 px-4">
                     <h2 ref={skillsTitleRef} className="font-archivo text-orange-500 text-3xl md:text-5xl font-bold whitespace-nowrap">
                         Skills
                     </h2>
-                    <div className="h-[1px] w-full bg-gradient-to-r from-orange-500/50 to-[#03071e]"></div>
+                    <div className="h-[1px] w-full bg-gradient-to-r from-orange-500/50 to-transparent"></div>
                 </div>
                 <div
                     id="competences"
                     ref={skillsRef}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto lg:p-16 md:p-10 p-6 bg-gradient-to-b from-black via-[#0b0810] to-orange-600"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto max-w-7xl lg:p-16 md:p-10 p-6"
                 >
                     {skills.map((s, index) => (
                         <div
@@ -270,9 +270,9 @@ export default function HomePage() {
                 <h2 className="text-4xl font-semibold font-archivo text-orange-500">Get in touch with me</h2>
                 <p className="text-neutral-300 mt-3 max-w-xl mx-auto">You have a web project in mind? Whether it’s about building a modern application, redesigning your website, or bringing an innovative idea to life, I’d be happy to discuss it with you.</p>
                 <div className="mt-6 flex items-center justify-center gap-3">
-                    <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Contact me</button>
-                    <button className="px-4 py-2 rounded-full bg-neutral-900 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Download CV</button>
-                </div>
+                        <button className="px-4 py-2 rounded-full bg-[#0e1428] border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Download CV</button>
+                        <button className="px-4 py-2 rounded-full bg-orange-600 border border-neutral-700 text-sm hover:scale-105 transition-transform duration-300">Contact me</button>
+                    </div>
                 <div className="mt-6 flex items-center justify-center gap-4 text-neutral-300">
                     <Link href="https://www.linkedin.com/in/in%C3%A8s-agbozo-4510472b1/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 hover:bg-orange-500 transition-all duration-300">
                         <FaLinkedin />
