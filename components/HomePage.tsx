@@ -152,7 +152,7 @@ export default function HomePage() {
                     {/* Colonne Texte : Storytelling (7 colonnes) */}
                     <div className="lg:col-span-7 space-y-6 text-slate-300 text-justify leading-relaxed text-lg">
                         <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-orange-500 first-letter:mr-3 first-letter:float-left">
-                            I’m a front-end web developer focused on building clean, responsive, and user-centered interfaces.
+                            I’m Inès Agbozo, a front-end web developer focused on building clean, responsive, and user-centered interfaces.
                             I turn ideas and designs into reliable, high-performing web experiences using modern technologies like React and Tailwind CSS.
                         </p>
 
