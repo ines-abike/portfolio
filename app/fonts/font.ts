@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 export const morpich = localFont({
   src: [
     {
-      path: "./AnalogMorpich-6Rn16.otf",
+      path: "./DannybrasscoRegular-OGY7p.otf",
       weight: "400",
       style: "normal",
     },

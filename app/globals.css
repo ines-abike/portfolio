@@ -21,32 +21,11 @@
   }
 }
 
-html, body, .page {
-  margin: 0;
-  height: 100%;
-  color: #fff;
+html, body {
+   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-.page-content {
-  background: #000;
-  visibility: hidden;
-  opacity: 0;
-  text-align: center;
-  color: #fff;
-  height: 100%;
-}
-
-.overlay {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 500px;
-  border-radius: 10px;
- background:  rgba(192, 75, 16);
-
-
-  transform: translate(-50%, -50%) scale(1);
-  z-index: 1000;
+body {
+  overscroll-behavior-y: none;
 }
