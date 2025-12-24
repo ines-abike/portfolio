@@ -10,3 +10,14 @@ export const morpich = localFont({
   ],
   variable: "--morpich",
 });
+
+export const archivo = localFont({
+  src: [
+    {
+      path: "./Archivo_Condensed-Black.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--archivo",
+});

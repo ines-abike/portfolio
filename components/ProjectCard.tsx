@@ -1,8 +1,11 @@
+"use client";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { BsEye } from "react-icons/bs";
-import { RiGitRepositoryCommitsFill } from "react-icons/ri";
 import { FiFigma } from "react-icons/fi";
 import { ProjectCardProps } from "@/types";
+import { FaCode } from "react-icons/fa6";
 
 export default function ProjectCard({
   title,
@@ -11,50 +14,80 @@ export default function ProjectCard({
   github,
   figma,
   preview,
-  type,
 }: ProjectCardProps) {
+  const divRef = useRef<HTMLDivElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!divRef.current) return;
+
+    const div = divRef.current;
+    const rect = div.getBoundingClientRect();
+
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
 
   return (
-    <>
-      <div className="group relative rounded-lg overflow-hidden shadow-lg bg-gradient-to-tr from-[#0b0b0f] via-[#0b0810] to-[#0b0710] border border-neutral-800">
-        <div className="group inset-0 relative bg-[linear-gradient(135deg,#0f0f13_0%,#0b0710_40%,#111015_100%)]">
+    <div
+      ref={divRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsFocused(true)}
+      onMouseLeave={() => setIsFocused(false)}
+      className="relative group overflow-hidden rounded-xl bg-slate-900 p-px"
+    >
+      {/* L'effet de dégradé qui suit la souris */}
+      <div
+        className="pointer-events-none absolute -inset-px transition duration-300"
+        style={{
+          opacity: isFocused ? 1 : 0,
+          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.1), transparent 40%)`,
+        }}
+      />
+
+      {/* Contenu de la carte */}
+      <div className="relative flex flex-col h-full bg-slate-950 rounded-[11px] overflow-hidden">
+        {/* Preview Image */}
+        <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={preview}
             alt={title}
-            width={500}
-            height={500}
-            className="w-full h-96 object-cover group-hover:scale-105 transition-all duration-300"
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <div className="bg-black/80 h-full w-full inset-0 absolute flex items-end justify-start">
-            <div className="p-4 pb-6">
-              <h3 className="font-semibold text-start text-neutral-100">{title}</h3>
-              <p className="text-neutral-300 text-start mt-2">{desc}</p>
+          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+            {demo && (
+              <Link href={demo} target="_blank" className="p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-md transition-colors text-white">
+                <BsEye size={20} />
+              </Link>
+            )}
+          </div>
+        </div>
 
-              <div className="mt-4 flex gap-3">
-                  <a
-                    href={demo}
-                    className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"
-                  >
-                    <BsEye />
-                  </a>
-              
-                <a
-                  href={github}
-                  className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"
-                >
-                  <RiGitRepositoryCommitsFill />
-                </a>
-                <a
-                  href={figma}
-                  className="p-3 rounded-full bg-neutral-900 border border-neutral-700 text-neutral-200"
-                >
-                  <FiFigma />
-                </a>
-              </div>
-            </div>
+        {/* Détails */}
+        <div className="p-5 flex flex-col flex-grow">
+          <h3 className="text-xl font-bold text-slate-100 mb-2">{title}</h3>
+          <p className="text-slate-400 text-sm line-clamp-3 mb-6 flex-grow">
+            {desc}
+          </p>
+
+          {/* Liens Footer */}
+          <div className="flex items-center gap-4 border-t border-slate-800 pt-4 mt-auto">
+            {github && (
+              <Link href={github} target="_blank" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                <FaCode size={18} />
+                Code
+              </Link>
+            )}
+            {figma && (
+              <Link href={figma} target="_blank" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                <FiFigma size={18} />
+                Design
+              </Link>
+            )}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

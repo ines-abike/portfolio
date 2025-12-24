@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-morpich: var(--morpich);
+  --font-archivo: var(--archivo);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,9 +24,8 @@
 html, body, .page {
   margin: 0;
   height: 100%;
-  font-family: sans-serif;
   color: #fff;
-      scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .page-content {
