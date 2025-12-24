@@ -67,7 +67,7 @@ export default function HomePage() {
         : "justify-between max-w-7xl mx-auto px-8";
 
     return (
-        <div className="bg-gradient-to-b from-black via-[#07060a] to-[#0b0710] text-white font-sans overflow-x-hidden">
+        <div className="bg-[#03071e] text-white font-sans overflow-x-hidden">
 
             {/* NAVIGATION */}
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'pt-4' : 'pt-6'}`}>
@@ -118,7 +118,7 @@ export default function HomePage() {
                 </div>
             </nav>
 
-            <header ref={headerRef} className="relative flex flex-col items-center justify-center min-h-screen bg-black text-center px-6 overflow-hidden">
+            <header ref={headerRef} className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden">
                 <div className="pt-20 relative flex flex-col gap-4">
                     <div className="flex items-center justify-center">
                         <div className="p-1 bg-orange-600 rounded-full">
@@ -126,7 +126,7 @@ export default function HomePage() {
                         </div>
                     </div>
                     <h1 ref={titleRef} className="text-4xl md:text-6xl lg:text-7xl font-archivo max-w-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400">
-                        Hey, I'm Inès. <br className="hidden md:block" /> Front-End Developer.
+                        Hey, I&apos;m Inès. <br className="hidden md:block" /> Front-End Developer.
                     </h1>
                     <p ref={subtitleRef} className="max-w-xl mx-auto text-sm md:text-base text-neutral-400">
                         I develop web projects with the goal of making them both beautiful and useful...
@@ -161,7 +161,7 @@ export default function HomePage() {
                         </p>
 
                         <p>
-                            When I'm not coding, I'm font off make photography and play chess. 
+                            When I&apos;m not coding, I&apos;m font off make photography and play chess. 
                         </p>
                     </div>
 
@@ -247,7 +247,7 @@ export default function HomePage() {
                     <h2 ref={skillsTitleRef} className="font-archivo text-orange-500 text-3xl md:text-5xl font-bold whitespace-nowrap">
                         Skills
                     </h2>
-                    <div className="h-[1px] w-full bg-gradient-to-r from-orange-500/50 to-transparent"></div>
+                    <div className="h-[1px] w-full bg-gradient-to-r from-orange-500/50 to-[#03071e]"></div>
                 </div>
                 <div
                     id="competences"
