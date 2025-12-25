@@ -290,7 +290,7 @@ export default function HomePage() {
                         <span className="text-[4vw] ml-2">%</span>
                     </div>
                 </div>
-                <p className="mt-4 font-mono text-sm tracking-widest uppercase text-white/90">Loading Experience</p>
+                <p className="mt-4 font-mono text-sm tracking-widest uppercase text-white/90">Loading...</p>
             </div>
 
             {/* NAVIGATION */}
