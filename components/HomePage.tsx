@@ -53,16 +53,15 @@ export default function HomePage() {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     useEffect(() => {
+  
         // 1. Gestion du scroll avec smooth navbar
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 80);
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
-window.scrollTo(0, 0);
-        // 2. Timeline d'intro sophistiquée
-        const tl = gsap.timeline();
 
-        // A. Animation du compteur avec effet de glow
+       const tl = gsap.timeline();
+        
         const counter = { value: 0 };
         tl.to(counter, {
             value: 100,
@@ -103,7 +102,7 @@ window.scrollTo(0, 0);
         
         // D. Titre - Split text effect
         .fromTo(titleRef.current,
-{ yPercent: 100, opacity: 0, rotationX: 45 },
+            { y: 120, opacity: 0, rotationX: 45 },
             { 
                 y: 0, 
                 opacity: 1, 
@@ -125,60 +124,6 @@ window.scrollTo(0, 0);
             },
             "-=0.7"
         )
-        
-        // F. CTA Buttons - Pop effect
-        .fromTo(ctaButtonsRef.current?.children,
-            { scale: 0, opacity: 0, rotation: -180 },
-            { 
-                scale: 1, 
-                opacity: 1, 
-                rotation: 0,
-                duration: 0.6,
-                stagger: 0.15,
-                ease: "back.out(2)" 
-            },
-            "-=0.4"
-        );
-
-        // 3. Parallax sur l'image hero (mouse move)
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!heroImageRef.current) return;
-            const { clientX, clientY } = e;
-            const xPos = ((clientX / window.innerWidth) - 0.5) * 40;
-            const yPos = ((clientY / window.innerHeight) - 0.5) * 40;
-            
-            gsap.to(heroImageRef.current, {
-                x: xPos,
-                y: yPos,
-                rotation: xPos * 0.05,
-                duration: 1.2,
-                ease: "power2.out"
-            });
-        };
-        window.addEventListener("mousemove", handleMouseMove);
-
-        // 4. Section About - Reveal progressif
-        gsap.fromTo(aboutTextRef.current?.children,
-            { 
-                y: 60, 
-                opacity: 0,
-                filter: "blur(10px)"
-            },
-            {
-                y: 0,
-                opacity: 1,
-                filter: "blur(0px)",
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: aboutSectionRef.current,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-
         // 5. Cartes d'expérience - Cascade effect
         experienceCardsRef.current.forEach((card, index) => {
             if (!card) return;
@@ -320,42 +265,16 @@ window.scrollTo(0, 0);
             );
         });
 
-        // 11. Hover effects sur les project cards
-        projectCardsRef.current.forEach(card => {
-            if (!card) return;
-            
-            card.addEventListener('mouseenter', () => {
-                gsap.to(card, {
-                    y: -10,
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(249, 115, 22, 0.3)",
-                    duration: 0.4,
-                    ease: "power2.out"
-                });
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                gsap.to(card, {
-                    y: 0,
-                    scale: 1,
-                    boxShadow: "0 0 0 rgba(249, 115, 22, 0)",
-                    duration: 0.4,
-                    ease: "power2.out"
-                });
-            });
-        });
-
         // Cleanup
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener("mousemove", handleMouseMove);
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
 
     const navContainerClasses = isScrolled
-        ? "justify-between max-w-2xl mx-auto bg-white/10 py-3 backdrop-blur-md rounded-full px-6 border border-white/20"
-        : "justify-between max-w-7xl mx-auto px-8";
+        ? "justify-between max-w-2xl mx-auto bg-white/10 py-3 backdrop-blur-md rounded-full md: px-6 px-4"
+        : "justify-between max-w-7xl mx-auto md:px-8 px-0";
 
     return (
         <div className="bg-[#03071e] text-white font-sans overflow-hidden selection:bg-orange-600">
@@ -375,7 +294,7 @@ window.scrollTo(0, 0);
             </div>
 
             {/* NAVIGATION */}
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'pt-4' : 'pt-6'}`}>
+            <nav className={`px-4 fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'pt-4' : 'pt-6'}`}>
                 <div className={`flex items-center transition-all duration-500 ${navContainerClasses}`}>
                     <Logo isScrolled={isScrolled} />
 
@@ -421,7 +340,7 @@ window.scrollTo(0, 0);
 
             {/* HEADER */}
             <header ref={headerRef} className="relative flex flex-col items-center justify-center min-h-screen text-center px-6 overflow-hidden">
-                <div className=" relative flex flex-col gap-4">
+                <div className="pt-20 relative flex flex-col gap-4">
                     <div className="flex items-center justify-center">
                         <div 
                             ref={heroImageRef} 
@@ -470,7 +389,7 @@ window.scrollTo(0, 0);
                 <div className="grid lg:grid-cols-2 gap-12 items-start">
                     <div ref={aboutTextRef} className="space-y-6 text-slate-300 text-justify leading-relaxed text-lg">
                         <p className="first-letter:text-5xl first-letter:font-bold first-letter:text-orange-500 first-letter:mr-3 first-letter:float-left">
-                            I'm Inès Agbozo, a front-end web developer focused on building clean, responsive, and user-centered interfaces.
+                            I&apos;m Inès Agbozo, a front-end web developer focused on building clean, responsive, and user-centered interfaces.
                             I turn ideas and designs into reliable, high-performing web experiences using modern technologies like React and Tailwind CSS.
                         </p>
                         <p>
@@ -622,7 +541,7 @@ window.scrollTo(0, 0);
             {/* CONTACT / FOOTER */}
             <div id="contact" ref={footerRef} className="mt-8 md:py-16 py-6 text-center px-6">
                 <h2 className="text-4xl font-semibold font-archivo text-orange-500">Get in touch with me</h2>
-                <p className="text-neutral-300 mt-3 max-w-xl mx-auto">You have a web project in mind? Whether it's about building a modern application, redesigning your website, or bringing an innovative idea to life, I'd be happy to discuss it with you.</p>
+                <p className="text-neutral-300 mt-3 max-w-xl mx-auto">You have a web project in mind? Whether it&apos;s about building a modern application, redesigning your website, or bringing an innovative idea to life, I&apos;d be happy to discuss it with you.</p>
                 <div className="mt-6 flex items-center justify-center gap-3">
                     <button className="cursor-pointer px-6 py-3 rounded-full bg-[#0e1428] border border-neutral-700 text-sm hover:scale-110 hover:border-orange-600 transition-all duration-300 shadow-lg">
                         Download CV
@@ -632,18 +551,22 @@ window.scrollTo(0, 0);
                     </button>
                 </div>
                 <div className="mt-8 flex items-center justify-center gap-4 text-neutral-300">
-                     <Link href="https://www.linkedin.com/in/in%C3%A8s-agbozo-4510472b1/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 hover:bg-orange-500 transition-all duration-300">
+                    <Link href="https://www.linkedin.com/in/in%C3%A8s-agbozo-4510472b1/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-125 hover:bg-orange-500 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-orange-500/50">
                         <FaLinkedin />
                     </Link>
-                    <Link href="https://github.com/InesAbike/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 hover:bg-orange-600 transition-all duration-300">
+                    <Link href="https://github.com/InesAbike/" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-125 hover:bg-orange-600 hover:-rotate-12 transition-all duration-300 shadow-lg hover:shadow-orange-600/50">
                         <FaGithub />
                     </Link>
-                    <Link href="https://www.facebook.com/ines.agbozo.9" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-110 hover:bg-orange-600 transition-all duration-300">
+                    <Link href="https://www.facebook.com/ines.agbozo.9" className="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center hover:scale-125 hover:bg-orange-600 hover:rotate-12 transition-all duration-300 shadow-lg hover:shadow-orange-600/50">
                         <FaFacebookF />
                     </Link>
                 </div>
+            </div>
+            <footer className="border-t border-white/10">
+                <div className="p-4 text-sm font-light text-center">
+                    Copyright©2025. InesAgbozo.
                 </div>
-                  <footer className="border-t border-white/10"><div className="p-4 text-sm font-light">Copyright©2025. InesAgbozo.</div></footer>
-                  </div>
+            </footer>
+        </div>
     );
 }
