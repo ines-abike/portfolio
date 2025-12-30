@@ -447,7 +447,7 @@ export default function HomePage() {
                                 ref={(el) => { experienceCardsRef.current[2] = el; }}
                                 className="group p-4 rounded-xl border border-orange-500/20 bg-orange-500/[0.02] hover:bg-orange-500/[0.05] transition-all duration-300"
                             >
-                                <span className="text-xs font-mono text-orange-500/80">2021 — 2024</span>
+                                <span className="text-xs font-mono text-orange-500/80">2022 — 2025</span>
                                 <h4 className="text-white font-medium group-hover:translate-x-1 transition-transform">
                                     Bachelor&apos;s Degree in Management Information Systems (MIS)
                                 </h4>
