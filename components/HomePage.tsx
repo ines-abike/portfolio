@@ -564,7 +564,7 @@ export default function HomePage() {
             </div>
             <footer className="border-t border-white/10">
                 <div className="p-4 text-sm font-light text-center">
-                    Copyright©2025. InesAgbozo.
+                    Copyright© {new Date().getFullYear()}. InesAgbozo.
                 </div>
             </footer>
         </div>
